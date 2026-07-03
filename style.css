@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1d2671, #c33764, #f7971e, #ffd200);
+  background-size: 400% 400%;
+  animation: bg 12s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 45px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.time-box {
+  min-width: 120px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: 0.3s;
+}
+
+.time-box:hover {
+  transform: scale(1.08) rotate(2deg);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  min-height: 40px;
+  transition: 0.3s;
+}
+
+.message.highlight {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.sextou-mode {
+  animation: pulse 1s infinite;
+}
+
+.sextou-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 320px;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: glow 1s ease-in-out infinite alternate, dance .8s infinite;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 40px #ff9800; }
+  to { text-shadow: 0 0 20px #fff, 0 0 40px #ff5722, 0 0 60px #ff0000; }
+}
+
+@keyframes dance {
+  0% { transform: rotate(-2deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.06); }
+  100% { transform: rotate(-2deg) scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  opacity: .8;
+  animation: fall linear forwards;
+  z-index: 999;
+  border-radius: 3px;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  margin-top: 20px;
+  opacity: .8;
+  font-size: .9rem;
+}

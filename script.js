@@ -1,701 +1,13 @@
 // =====================================================================
-// 1. BANCO DE MENSAGENS (TODAS AS CATEGORIAS)
+// script.js - LÓGICA PRINCIPAL
+// Depende do arquivo messages.js (carregado antes)
 // =====================================================================
 
-// -------- Natal (30) --------
-const natalMessages = [
-  "🎄 Falta pouco para cair de boca no peru. E na ceia também.",
-  "🍗 O peru já está suando frio e o seu tio armando a piada do pavê.",
-  "🎅 Papai Noel abasteceu o trenó com os calmantes que a família vai precisar.",
-  "🎁 O amigo secreto vai te decepcionar, mas o divórcio dos seus pais supera.",
-  "🍷 Separe a calça de elástico para esconder a silhueta do fracasso.",
-  "🍰 A sobremesa está chamando, igualzinho ao seu cardiologista.",
-  "🎄 O Chester está escondido, igual ao dinheiro que você sumiu.",
-  "🍾 O pavê está sendo preparado por quem você deseja ver longe.",
-  "🎁 O décimo terceiro evaporou antes do nascimento de Jesus.",
-  "🎄 O cheiro de farofa e de hipocrisia familiar já está no ar.",
-  "🍗 A perua da sua tia está com inveja das suas conquistas inexistentes.",
-  "🎅 O bom velhinho tomou Red Bull; trabalhar uma vez por ano exige dopamina.",
-  "🎄 A árvore cansou de enfeite e você de fingir que gosta de parente.",
-  "🍷 Tiozão já aqueceu o vinho químico e as piadas machistas de 1980.",
-  "🍰 Coca zero na mesa para compensar as 15 mil calorias de puro ódio.",
-  "🎁 O presente caro foi comprado pelo padrasto rico do seu filho.",
-  "🧦 As meias estão na chaminé: foi o que o saldo permitiu.",
-  "🍗 O peru corre de você igual sua dignidade nas festas da firma.",
-  "🎅 Papai Noel fazendo hora extra porque o chifre não cabe na chaminé.",
-  "🎄 A decoração começou a piscar, parecendo seu pisca-alerta na sarjeta.",
-  "🍾 O espumante barato de Natal já está gelando para acelerar a cirrose.",
-  "🍷 Vinho de Natal aberto e o choro na pia da cozinha já agendado.",
-  "🎁 Embrulho bonito para esconder que a caixa por dentro está vazia.",
-  "🍰 A torta de limão está pronta para combinar com o azedume da ceia.",
-  "🎄 Luzes de Natal consumindo a energia que faltava na sua saúde mental.",
-  "🎅 O trenó está no GPS e a sua paciência recalculando a rota.",
-  "🍗 O peru está na churrasqueira alheia; na sua só tem ovo mesmo.",
-  "🎄 Presépio montado para lembrar que até Jesus nasceu no improviso.",
-  "🍷 Cheiro de vinho quente abafando o odor de desespero familiar.",
-  "🎁 Treine a cara de surpresa ao ganhar outro kit de sabonete barato.",
-];
+// =====================================================================
+// 1. CONTROLE DE REPETIÇÃO DE MENSAGENS
+// =====================================================================
 
-// -------- Ano Novo (30) --------
-const anoNovoMessages = [
-  "🥂 Já pode pensar nas promessas que vai quebrar no dia dois.",
-  "🎆 O calendário está virando, pena que a sua conta continua vermelha.",
-  "🍾 Espumante gelando para esquecer que envelheceu sem nenhuma conquista.",
-  "📅 Novo ano, mesmos boletos, só que reajustados pela inflação.",
-  "💸 O décimo terceiro evaporou e a ilusão de riqueza durou três dias.",
-  "🎇 Prepare o 'esse ano eu mudo' enquanto comete os mesmos erros.",
-  "🥂 As metas já foram abandonadas antes mesmo dos fogos estourarem.",
-  "🎉 Mais um ano sobrevivido por pura teimosia do seu anjo da guarda.",
-  "🍾 A virada está chamando e o arrependimento dos gastos já respondeu.",
-  "🎆 Os fogos prontos para queimar o dinheiro que você não tinha.",
-  "📅 Novas promessas para serem quebradas com o entusiasmo de sempre.",
-  "🥂 A lágrima de ano novo já vem vindo na hora do abraço forçado.",
-  "🎉 O réveillon prova que roupa branca não traz paz para ninguém.",
-  "💸 O cartão de crédito já está chorando no cantinho do bolso.",
-  "🍾 O espumante de uva estragada vai descer queimando igual seu futuro.",
-  "🎆 A contagem regressiva começou para o início do seu próximo colapso.",
-  "📅 O planejamento estratégico virou piada entre você e o terapeuta.",
-  "🥂 Um brinde à vida de quem claramente queria reiniciar o jogo do zero.",
-  "🎉 Músicas de ano novo tocando para mascarar o silêncio da solidão.",
-  "🍾 A cidra Cereser na geladeira mostrando o significado de decadência.",
-  "🎆 Fogos prontos para assustar os cachorros e os endividados.",
-  "📅 O calendário novo na parede vigiando seus próximos fracassos.",
-  "🥂 O primeiro brinde de 2026 sendo ensaiado com falsidade política.",
-  "🎉 Festa na praia para passar raiva no trânsito e pegar micose.",
-  "💸 O orçamento de 2026 foi estourado na compra do look branco de grife.",
-  "🍾 A taça limpa para receber a bebida barata que você merece.",
-  "🎆 O show da virada na TV para lembrar como sua vida é monótona.",
-  "📅 O ano velho levando embora sua última gota de otimismo.",
-  "🥂 Brinde de ano novo gelado, coração de gelo, bolso zerado.",
-  "🎉 A esperança renovada dura até o primeiro boleto de IPVA chegar.",
-];
-
-// -------- Carnaval (30) --------
-const carnavalMessages = [
-  "🎭 O glitter já está no ar e o check-list de ISTs também.",
-  "🍺 Seu fígado pediu férias, mas o seu psicólogo já pediu demissão.",
-  "🎺 O samba aquecendo para anestesiar a dor de ser CLT.",
-  "💃 A produtividade foi embora e a dignidade seguiu de mãos dadas.",
-  "🎉 O RH prefere não comentar o que viu no seu story de madrugada.",
-  "🍻 Hora de esquecer que existe segunda-feira e herdeiros no mundo.",
-  "🎊 Blocos chamando para você ser assaltado com alegria e confete.",
-  "🎭 Fantasia pronta: gostosa por fora, destruída por dentro por antibióticos.",
-  "🍺 Cerveja morna com água de gelo de procedência duvidosa.",
-  "🎺 O som do trio ecoando direto no seu zumbido de ansiedade.",
-  "💃 O corpo pedindo axé e a coluna implorando uma dipirona de 1g.",
-  "🎉 O carnaval nos portões e a sua dignidade implorando para não sair.",
-  "🍻 Hidratação virou lenda, o foco agora é a osmose alcoólica.",
-  "🎭 Confetes no chão misturados com lágrimas e urina de desconhecidos.",
-  "🎺 O samba-enredo na cabeça para abafar os gritos do subconsciente.",
-  "💃 A folia tomou conta e o juízo sumiu no pré-bloquinho.",
-  "🎉 O abadá apertado tentando segurar o resto de autoestima que resta.",
-  "🍺 A latinha suando mais que você fugindo de responsabilidades.",
-  "🎭 Pintura no rosto serve para esconder as olheiras de choro.",
-  "🎺 O tamborim vibrando na mesma frequência do seu ataque de pânico.",
-  "💃 Rebolado ensaiado para impressionar quem não lembrará seu nome amanhã.",
-  "🎉 Blocos lotados de gente que você daria 'não' no Tinder.",
-  "🍻 O chope chamando e o seu cartão clonado respondendo.",
-  "🎭 Brilho no olhar ou só efeito do alucinógeno barato do bloco?",
-  "🎺 O cantor no trio e a multidão embaixo se arrastando como zumbis.",
-  "💃 A energia acabou, agora é o puro ódio que te mantém em pé.",
-  "🎉 Carnaval a todo vapor e o estoque de Engov na farmácia zerado.",
-  "🍺 O fígado pedindo trégua e o coração implorando um desfibrilador.",
-  "🎭 Fantasia fetichista barata para justificar escolhas questionáveis da noite.",
-  "🎺 O ritmo no sangue e o álcool puro no córtex pré-frontal.",
-];
-
-// -------- Páscoa (20) --------
-const pascoaMessages = [
-  "🍫 Chocolate chamando para descontar o vazio existencial em gordura trans.",
-  "🐰 Coelhinho fazendo hora extra porque o preço do ovo exige financiamento.",
-  "🥚 Sua dieta entrou em modo avião e o pâncreas em modo de alerta.",
-  "🍫 O supermercado agradece aos idiotas que pagam 100 reais em 200g.",
-  "🐣 Prepare-se para atacar os ovos; é a única coisa que vai traçar essa semana.",
-  "🍬 A glicose comemorando o pico que te deixará pré-diabético até segunda.",
-  "🍫 O ovo de páscoa na mira e o limite do cartão no cheque especial.",
-  "🐰 Coelhinho cansado de ver você escondendo o seu fracasso amoroso.",
-  "🥚 Ceia planejada com o peixe esquecido no fundo do congelador.",
-  "🍫 Chocolate artesanal custando o preço de um rim no mercado negro.",
-  "🐣 Família reunida para discutir quem vai herdar as dívidas da avó.",
-  "🍬 A dieta foi para o espaço e o amor-próprio foi logo em seguida.",
-  "🍫 O bombom na boca e o arrependimento pesado na balança.",
-  "🐰 Coelhinho comendo cenoura porque carne de verdade tá inflacionada.",
-  "🥚 Ovo de colher pronto para ser comido sozinho no quarto escuro.",
-  "🍫 Páscoa chegou para soterrar suas mágoas em açúcar refinado.",
-  "🐣 O ninho de chocolate pronto para chocar outra crise de ansiedade.",
-  "🍬 Doce de leite no ovo para garantir que seu estômago desista.",
-  "🍫 Chocolate quente para aquecer esse seu coração frio e amargurado.",
-  "🐰 A páscoa virou sinônimo de gula e endividamento bancário.",
-];
-
-// -------- Sexta-feira Santa (20) --------
-const sextaSantaMessages = [
-  "🙏 Hora de desacelerar; o ritmo da sua vida já está quase parando.",
-  "✝️ Um descanso merecido para quem finge que trabalha o ano inteiro.",
-  "🕊️ Aproveite para respirar antes que a rotina te sufoque de novo.",
-  "☕ O café parece mais santo sem ter que olhar na cara do chefe.",
-  "🙏 O silêncio fala alto hoje porque ninguém aguenta mais suas reclamações.",
-  "✝️ Reflexão do dia: por que você continua insistindo nesse subemprego?",
-  "🕊️ A paz está de volta; aproveite os trinta minutos que ela dura.",
-  "☕ O expediente deu trégua, mas os problemas continuam na mesa.",
-  "🙏 Feriado santo salvando quem já estava flertando com o burnout.",
-  "✝️ Sexta-feira de penitência, seu estado civil há mais de cinco anos.",
-  "🕊️ A alma em paz porque o WhatsApp do trabalho finalmente silenciou.",
-  "☕ O café ainda é permitido, o que não pode é ter vontade de viver.",
-  "🙏 Dia de recolhimento e de fingir santidade no almoço de família.",
-  "✝️ A ressurreição está próxima, ao contrário da sua dignidade profissional.",
-  "🕊️ O domingo está chegando e com ele a depressão pré-segunda-feira.",
-  "☕ Silêncio absoluto para não dar bom dia para quem você odeia.",
-  "🙏 A oração foi feita pedindo secretamente a demissão do estagiário.",
-  "✝️ A via sacra percorrida diariamente no transporte público lotado.",
-  "🕊️ O perdão está no ar, mas o rancor no seu peito continua intacto.",
-  "☕ Feriado santo significa deitar e fingir inexistência por 24 horas.",
-];
-
-// -------- Corpus Christi (20) --------
-const corpusChristiMessages = [
-  "🙏 Mais um descanso chegando para quem vive em eterno estado letárgico.",
-  "😌 O colchão já moldou perfeitamente o formato do seu sedentarismo.",
-  "☕ O café faz milagres, mas ressuscitar seu ânimo já é pedir demais.",
-  "🙏 Procissão na rua e a fila do seguro-desemprego na sua mente.",
-  "😌 O corpo pede descanso e a mente pede uma lobotomia urgente.",
-  "☕ O café é sagrado, o energético é vital e o calmante é opcional.",
-  "🙏 Corpus Christi é a arte de enforcar a sexta com atestado falso.",
-  "😌 A preguiça é permitida por lei e praticada por puro talento.",
-  "☕ A liturgia celebrada e a sua paciência com humanos sepultada.",
-  "🙏 A eucaristia no coração e o ranço da firma guardado na vesícula.",
-  "😌 Corpo e alma de folga; ambos cansados, velhos e mal pagos.",
-  "☕ Descanso sagrado; aguentar cliente sem surtar exige milagre divino.",
-  "🙏 Igreja cheia de gente rezando para ganhar na loteria e divorciar.",
-  "😌 Feriadão chegando e o trânsito desenhando o inferno na estrada.",
-  "☕ O café forte, igualzinho ao desespero de voltar a trabalhar depois.",
-  "🙏 Tradição de passar o dia de pijama sem escovar os dentes.",
-  "😌 A cama chamando com a mesma intensidade que o desemprego ronda.",
-  "☕ O santo do dia é o descanso e o mártir é quem faz hora extra.",
-  "🙏 Bênção recebida para aguentar as humilhações da próxima semana.",
-  "😌 Dia de corpo presente, porque a mente faleceu faz três anos.",
-];
-
-// -------- Dia do Trabalho (20) --------
-const trabalhoMessages = [
-  "😴 Descanso remunerado para lembrar o quanto odeia vender sua força.",
-  "💼 A produtividade pediu demissão e foi morar numa praia isolada.",
-  "🛋️ Sofá reservado para o maior acumulador de estresse da região.",
-  "☕ Hoje ninguém abre planilha, mas todo mundo abre uma latinha.",
-  "😴 O trabalho tirou férias, pena que a pobreza faz plantão.",
-  "💼 E-mail ignorado com o mesmo desprezo que o chefe tem pelo seu bônus.",
-  "🛋️ O descanso é obrigatório, a ressaca de amanhã é certeza matemática.",
-  "☕ Café forte para curar o ódio acumulado da jornada semanal.",
-  "😴 Jornada cumprida por milagre divino e muito rancor no coração.",
-  "💼 O chefe desistiu de cobrar; sabe que você opera no modo foda-se.",
-  "🛋️ Sofá te esperando para assistir à vida dos outros dar certo.",
-  "☕ Dia do trabalhador serve para lembrar que o capitalismo venceu você.",
-  "😴 Produtividade em modo avião e cérebro em modo vegetativo.",
-  "💼 Home office virou sinônimo de bater ponto e voltar a dormir.",
-  "🛋️ Filme na lista que você vai dormir nos primeiros cinco minutos.",
-  "☕ Café de domingo adiantado para combinar com a ansiedade de segunda.",
-  "😴 O corpo pediu trégua, os boletos dinheiro, a conta pediu falência.",
-  "💼 As metas viraram miragem e o plano de carreira piada de mau gosto.",
-  "🛋️ Descanso é lei; fazer hora extra hoje é puro desespero financeiro.",
-  "☕ Dia de não fazer nada, que é o que você faz melhor.",
-];
-
-// -------- Independência do Brasil (20) --------
-const independenciaMessages = [
-  "🇧🇷 Grito da independência vindo de um país refém do Serasa.",
-  "🎆 7 de setembro: livres para sermos explorados em nossa própria língua.",
-  "🎉 A pátria está de parabéns, o IDH nem tanto.",
-  "🍻 Feriado é motivo de festa para esquecer o preço da gasolina.",
-  "🇧🇷 Desfile cheio de idosos nostálgicos e tanques soltando fumaça preta.",
-  "🎆 Fogos no ar para disfarçar o barulho dos tiroteios diários.",
-  "🎉 Orgulho nacional dura até ver o desconto do IR no holerite.",
-  "🍻 Cerveja gelada para aguentar a pátria que nos obriga a beber.",
-  "🇧🇷 Independência é fingir que este país tem salvação por um dia.",
-  "🎆 O feriadão formado e a sua paciência decretando emancipação total.",
-  "🎉 A bandeira no mastro esconde a rachadura na parede da fachada.",
-  "🍻 Churrasco com a carne de segunda inflacionada que o saldo permitiu.",
-  "🇧🇷 O hino nacional sendo cantado por quem não sabe a segunda estrofe.",
-  "🎆 Os fogos iluminam o céu e a conta de luz ilumina o desespero.",
-  "🎉 Nação em festa e o cidadão rezando para não ser assaltado na esquina.",
-  "🍻 Dia de comemorar que ainda não fomos anexados por uma potência pior.",
-  "🇧🇷 D. Pedro preferiu o feriado ao trabalho; herói nacional legítimo.",
-  "🎆 O desfile cívico passou e deixou lixo na rua, igual à gestão pública.",
-  "🎉 Orgulho de ser brasileiro some na primeira fila do SUS.",
-  "🍻 Feriado quase santo, pena que o fígado pagará todos os pecados.",
-];
-
-// -------- Consciência Negra (20) --------
-const conscienciaMessages = [
-  "✊ A luta continua, principalmente contra o racismo daquele seu tio.",
-  "🌍 Respeito é lei, pena que o corporativo só lembra disso em novembro.",
-  "🖤 Empresas atualizando a foto de perfil por puro engajamento estético.",
-  "✊ Dia de reflexão para quem passa o ano cometendo microagressões.",
-  "🌍 A igualdade é direito, mas a passabilidade dita o salário na firma.",
-  "🖤 Amam a cultura negra, mas chamam a polícia se vêem na calçada.",
-  "✊ Preconceito perdeu espaço na teoria; na prática o segurança te segue.",
-  "🌍 Orgulho na pele e o cansaço de explicar o óbvio na alma.",
-  "🖤 História reescrita por quem cansou da versão do colonizador.",
-  "✊ A resistência venceu a escravidão; falta vencer a meritocracia de herdeiro.",
-  "🌍 Diversidade é linda na hashtag, menos na diretoria da sua empresa.",
-  "🖤 Dia de Zumbi enquanto o RH busca 'um perfil mais institucional'.",
-  "✊ Liberdade é conquista; vigilância constante é o preço pago por ela.",
-  "🌍 Consciência coletiva some na hora de contratar pretos de verdade.",
-  "🖤 Respeito é obrigatório; deboche contra racista de plantão é terapêutico.",
-  "✊ A luta contra o racismo é diária, o cansaço também.",
-  "🌍 União para combater quem jura que racismo reverso existe.",
-  "🖤 Dia da Consciência Negra para deixar o cidadão de bem desconfortável.",
-  "✊ A justiça tarda, falha e o opressor continua de jatinho.",
-  "🌍 A igualdade será real quando o topo não for exclusivamente pálido.",
-];
-
-// -------- São Jorge (RJ) (15) --------
-const saoJorgeMessages = [
-  "🐉 O santo na frente porque a sua retaguarda já está desprotegida.",
-  "⚔️ Espada em punho para cortar quem te pede dinheiro emprestado.",
-  "🐉 O dragão foi vencido, mas o seu chefe continua vivo cobrando a meta.",
-  "⚔️ Fé invencível, ao contrário do seu casamento que racha à toa.",
-  "🐉 O padroeiro do Rio na luta contra as milícias e o calor de 50°C.",
-  "⚔️ Proteção certa, mas não ande com o celular no bolso na Lapa.",
-  "🐉 Blindagem mística contra o mau-olhado das invejosas do setor.",
-  "⚔️ Coragem em alta, saldo bancário em baixa, o padrão de sempre.",
-  "🐉 O dragão derrotado virou espetinho de rua na janta do trabalhador.",
-  "⚔️ Força divina; se dependesse da sua coluna você já tinha desabado.",
-  "🐉 Santo no coração e patuá na carteira para ver se o dinheiro brota.",
-  "⚔️ Batalha vencida hoje; amanhã tem mais humilhação no horário comercial.",
-  "🐉 Dia do guerreiro que pega três conduções por um salário mínimo.",
-  "⚔️ Proteção celestial ativada contra os ex-namorados psicopatas.",
-  "🐉 Matar um leão por dia e aguentar o dragão da sogra no almoço.",
-];
-
-// -------- São Sebastião (RJ) (15) --------
-const saoSebastiaoMessages = [
-  "⛪ Padroeiro do Rio na festa e o cidadão fugindo de bala perdida.",
-  "🏹 A flecha no alvo, igualzinho ao boleto que acerta seu peito.",
-  "⛪ Fé inabalável, ao contrário do asfalto que derrete na primeira chuva.",
-  "🏹 Contra males do espírito o santo ajuda, contra assalto nem ele.",
-  "⛪ Dia de São Sebastião para o carioca fingir paz por 24 horas.",
-  "🏹 Mártir lembrado por quem sofre martírio diário na fila do BRT.",
-  "⛪ Devoção no ar misturada com cheiro de esgoto da Baía.",
-  "🏹 Santo no altar e o diabo comandando os aplicativos de namoro.",
-  "⛪ Feriado em sua homenagem para o carioca beber na praia sem culpa.",
-  "🏹 Força divina; sobreviver no Rio exige intervenção direta do além.",
-  "⛪ Padroeiro na cidade maravilhosa que de perto é cheia de problemas.",
-  "🏹 A flecha acertou sua autoestima quando você viu o saldo da conta.",
-  "⛪ Dia de fé para quem precisa acreditar que o amanhã será menos pior.",
-  "🏹 Proteção celestial contra a vizinha fofoqueira que vigia sua vida.",
-  "⛪ São Sebastião padroeiro de quem aguenta o calvário urbano rindo.",
-];
-
-// -------- Tiradentes (15) --------
-const tiradentesMessages = [
-  "🇧🇷 Único herói nacional que foi enforcado porque os ricos espanholavam.",
-  "⚖️ Justiça feita: mataram o pobre e os herdeiros dos ricos governam hoje.",
-  "🇧🇷 Dia de Tiradentes lembra que sonegar imposto é tradição nacional.",
-  "⚖️ Mártir virou herói porque morto não cria problemas para o governo.",
-  "🇧🇷 A independência sonhada por quem hoje vive preso na escala 6x1.",
-  "⚖️ Coragem é exemplo para você tomar vergonha e pedir demissão.",
-  "🇧🇷 Feriado nacional para comemorar a decapitação de alguém em praça pública.",
-  "⚖️ História contada para fazer o trouxa achar que o sacrifício vale.",
-  "🇧🇷 O mártir no panteão e você com a corda no pescoço do mesmo jeito.",
-  "⚖️ A justiça é tardia, falha e cara demais para o seu bolso.",
-  "🇧🇷 O 21 de abril no calendário para curar a ressaca do feriado anterior.",
-  "⚖️ A luta lembrada por quem hoje só luta para achar Wi-Fi grátis.",
-  "🇧🇷 O herói virou símbolo de como o Estado lida com quem reclama.",
-  "⚖️ A justiça é cega, surda e adora propina em dinheiro vivo.",
-  "🇧🇷 Tiradentes: patrimônio histórico da dor de cabeça do trabalhador.",
-];
-
-// -------- Nossa Senhora Aparecida (15) --------
-const aparecidaMessages = [
-  "🙏 A padroeira olha para o Brasil e se pergunta onde errou.",
-  "🌊 Santa encontrada nas águas para salvar um povo afogado em dívidas.",
-  "🙏 A fé é imensa, o desespero para pagar o cartão é maior ainda.",
-  "🌊 Precisa de milagre para fazer o salário durar até o dia 10.",
-  "🙏 Dia de Nossa Senhora, aproveite para rezar pela sua saúde mental.",
-  "🌊 Proteção divina contra o mau-olhado da colega falsa do setor.",
-  "🙏 Padroeira celebrada e o feriado mercantilizado com brinquedos caros.",
-  "🌊 Imagem milagrosa que suporta ver tanta hipocrisia no congresso.",
-  "🙏 Feriado santo, mas o comportamento dos fiéis no trânsito é demoníaco.",
-  "🌊 Esperança renovada até lembrar que o ano acabou e você não fez nada.",
-  "🙏 Padroeira no coração e desespero de comprar presente de Dia das Crianças.",
-  "🌊 Bênção derramada sobre quem desistiu de resolver problemas sozinho.",
-  "🙏 A santa carrega o Brasil nas costas com a ajuda de ansiolíticos.",
-  "🌊 Fé inabalável de quem crê que o chefe dará aumento por mérito.",
-  "🙏 Nossa Senhora Aparecida, rainha de um país governado por bobos.",
-];
-
-// -------- Finados (15) --------
-const finadosMessages = [
-  "🕯️ Dia de lembrar quem partiu e ter inveja por eles não pagarem boletos.",
-  "🌺 Flores no cemitério custando o preço de um jantar bom.",
-  "🕯️ Saudade no ar e o cheiro de vela lembrando que seu fim se aproxima.",
-  "🌺 Homenagem anual de quem ignorou o parente a vida inteira.",
-  "🕯️ Dia de finados chegou para atualizar o status da família no além.",
-  "🌺 Rezando para ver se a alma do falecido te ajuda num concurso.",
-  "🕯️ Memória eterna, inventário na justiça dividindo a família dura mais.",
-  "🌺 Respeito presente hoje porque morto não pode revidar ofensas.",
-  "🕯️ Lembrança viva de que a única certeza é a morte e o IR.",
-  "🌺 Flores nos túmulos para ostentar quem gastou mais na coroa.",
-  "🕯️ Visitar quem se livrou do trânsito, do chefe e da calvície.",
-  "🌺 Homenagem para garantir que o fantasma não puxe seu pé à noite.",
-  "🕯️ A vida é passageira e você viaja na classe econômica sem lanche.",
-  "🌺 O silêncio fala mais alto; mortos não dizem idiotices.",
-  "🕯️ Dia da saudade e de lembrar que você também virará adubo logo.",
-];
-
-// -------- Véspera de Natal (15) --------
-const vesperaNatalMessages = [
-  "🎄 Ceia sendo preparada com o frango fingindo ser banquete real.",
-  "🍗 O peru no forno e a tia perguntando se você continua encalhado.",
-  "🎅 A véspera chegou para trazer o pânico nas lojas de departamento.",
-  "🎁 Presentes embrulhados para esconder que vieram do camelô.",
-  "🍷 Vinho na mesa para entorpecer antes das discussões políticas.",
-  "🎄 Árvore iluminada para dar ar alegre a uma casa cheia de rancor.",
-  "🍗 Chester pronto para ser criticado pela avó que faz tudo melhor.",
-  "🎅 Papai Noel chegando com sacos cheios de ilusões traumatizantes.",
-  "🎁 Amigo secreto nervoso com medo de dar perfume e ganhar meias.",
-  "🍷 Brinde ensaiado com sorrisos amarelos e promessas falsas.",
-  "🎄 Noite de Natal para testar os limites da sua tolerância a parentes.",
-  "🍗 Farofa com uva passa para estragar o paladar de quem tem bom gosto.",
-  "🎅 A ceia quase pronta e a paciência de todos esgotada.",
-  "🎁 Presente no pé da árvore mostrando quem é o filho favorito.",
-  "🍷 Vinho quente para queimar as cordas vocais e te calar na briga.",
-];
-
-// -------- Véspera de Ano Novo (15) --------
-const vesperaAnoNovoMessages = [
-  "🎆 Virada para fingir que mudar o dígito do ano altera sua incompetência.",
-  "🥂 Taça cheia de espumante barato que dará a pior ressaca do século.",
-  "🎇 Ano novo na porta perguntando como você estragou mais 365 dias.",
-  "📅 Metas prontas para serem ignoradas a partir do dia 2 de janeiro.",
-  "💸 Orçamento estourado com festa open bar que só tinha cerveja quente.",
-  "🎆 Fogos armados para assustar os animais e torrar dinheiro público.",
-  "🥂 Brinde entre pessoas que vão se bloquear nas redes em fevereiro.",
-  "🎇 Esperança renovada por puro efeito do álcool no cérebro.",
-  "📅 Calendário novo pronto para registrar as mesmas reclamações de antes.",
-  "💸 Contas pagas? Não, só adiadas para o próximo mês de desespero.",
-  "🎆 Festa animada por substâncias ilícitas e música de qualidade duvidosa.",
-  "🥂 Espumante gelado para ver se desce sem te fazer vomitar antes da meia-noite.",
-  "🎇 Contagem começou para o início das cobranças do banco no ano novo.",
-  "📅 O ano velho foi tarde; o novo vem para terminar de te destruir.",
-  "💸 Boletos na caixa de entrada para inaugurar o ano com chave de ferro.",
-];
-
-// -------- Feriadão (20) --------
-const feriadaoMessages = [
-  "🔥 Feriadão para gastar em três dias o salário do mês inteiro.",
-  "🛋️ Seu sofá comemorando que você vai vegetar nele até criar bolor.",
-  "📉 Produtividade em modo economia desde a tarde de terça-feira passada.",
-  "🍺 Esse descanso promete deixar seu fígado pedindo socorro médico.",
-  "🏖️ Fim de semana ganhou DLC de preguiça e desperdício de tempo.",
-  "🚗 Estradas lotadas cheias de estressados querendo relaxar na marra.",
-  "😎 Expediente desistiu; ninguém é de ferro, muito menos o terceirizado.",
-  "🔥 O feriado batendo à porta e o cobrador batendo na outra.",
-  "🛋️ Sofá pronto para receber seu corpo em estado de decomposição mental.",
-  "📉 A semana encolheu e a sua disposição para trabalhar sumiu junto.",
-  "🍺 Churrasco com carne parcelada em 3 vezes sem juros no cartão.",
-  "🏖️ Praia chamando com promessa de arrastão, chuva e farofa na areia.",
-  "🚗 Trânsito para passar 6 horas ouvindo choro no banco de trás.",
-  "😎 Sorriso de quem sabe que passará quatro dias sem tomar banho.",
-  "🔥 Feriadão: alegria para você, faturamento alto para as distribuidoras.",
-  "🛋️ Descanso prolongado que te deixará mais cansado do que trabalhar.",
-  "📉 Produtividade pediu demissão; cansaço crônico não gera lucro.",
-  "🍺 O gelo no isopor mantendo fria a única coisa que te traz paz.",
-  "🏖️ O sol esperando para te dar uma insolação de terceiro grau.",
-  "😎 Óculos escuros para esconder os olhos vermelhos de esgotamento.",
-];
-
-// -------- Dias da semana (arrays grandes) --------
-const segundaMessages = [
-  "☕ Semana começou e você já pesquisa clínicas de transplante de fígado.",
-  "💀 Segunda veio lembrar que você nasceu pobre e precisa bater ponto.",
-  "😴 Seu travesseiro sente sua falta e o colchão chora seu abandono.",
-  "📈 Café virou combustível para não agredir o colega de baia.",
-  "🔋 Energia em modo economia e mau humor operando em capacidade máxima.",
-  "📅 O calendário te julgando por não ter nascido herdeiro de terras.",
-  "💻 O Excel aberto mostrando que sua vida se resume a planilhas inúteis.",
-  "😩 A ressaca passou e deu lugar à depressão crônica da rotina.",
-  "📞 Telefone tocando com alguém reclamando de algo que não é seu problema.",
-  "📨 E-mail lotado de demandas de quem claramente não tem o que fazer.",
-  "☕ O café é o único amigo que não te julga por querer explodir a firma.",
-  "😴 Segunda é sinônimo de cansaço acumulado desde a infância.",
-  "📈 Produtividade no chão, vontade de chorar no banheiro no topo.",
-  "💀 Começou o dia com o pé esquerdo preso na engrenagem do capitalismo.",
-  "😩 Segunda pesada parecendo a culpa por escolhas erradas no Tinder.",
-  "📅 Dia de sobrevivência começou; que os jogos da fome corporativa comecem.",
-  "💻 Computador ligado para fingir que lê relatórios encarando o vazio.",
-  "☕ Café na xícara e ódio destilado no olhar direcionado ao chefe.",
-  "😴 Cama chamando com a doçura que o mercado de trabalho não tem.",
-  "📈 Gráfico de cansaço subindo mais rápido que a inflação.",
-  "🔋 Bateria em 20% e o relógio ainda não marcou meio-dia.",
-  "📅 Calendário marcado com a data da sua próxima crise de pânico.",
-  "💀 Segunda é um clássico da tortura psicológica moderna aceita por todos.",
-  "😩 O fim de semana foi embora igual ao saldo da sua conta.",
-  "📨 E-mails cheios de termos em inglês para parecerem inteligentes.",
-  "☕ Café no sangue para garantir que o coração bata por puro ódio.",
-  "😴 Segunda é dia de luta... contra a vontade de deitar na rodovia.",
-  "📈 Produtividade é lenda urbana contada pelo pessoal do RH.",
-  "💻 Home office para poder chorar sem precisar esconder o rosto.",
-  "🔋 Energia baixa igual à sua autoestima no espelho do elevador.",
-  "📅 Dia de recomeçar a contagem regressiva para o colapso mental.",
-  "💀 Segunda é piada de mau gosto contada pelo destino contra você.",
-  "😩 O pesadelo passou? Não, ainda faltam 8 horas de expediente.",
-  "☕ O café é o salvador de quem já desistiu do amor-próprio.",
-  "😴 Travesseiro com saudade do único momento em que você não sofre.",
-  "📈 Cansaço em alta constante, paciência em declínio geométrico.",
-  "💻 Teclado esperando para você digitar 'conforme conversamos' com raiva.",
-  "🔋 Bateria no vermelho e sanidade pedindo falência múltipla de órgãos.",
-  "📅 Segunda é tradição para quem adora reclamar da vida nos stories.",
-  "💀 Inevitável, cruel e patrocinada pelo sistema financeiro global.",
-];
-
-const tercaMessages = [
-  "📈 Terça-feira: motor aquecendo com o óleo queimado da paciência.",
-  "⚡ O pior já passou... mentira, a semana mal começou a te torturar.",
-  "🔥 Continue firme; a sexta está perto, mas a demissão pode vir antes.",
-  "☕ Café forte de terça para compensar a falta de perspectiva de vida.",
-  "📅 Dia no meio do nada, sem a energia do início e sem a alegria do fim.",
-  "💻 Trabalho fluindo na velocidade de internet discada na chuva.",
-  "😴 Ainda não é quarta, mas seu corpo apresenta sinais de exaustão.",
-  "📈 Semana engrenando e a vontade de sumir acompanhando o ritmo.",
-  "⚡ Energia melhorando à base de substâncias tarja preta vencidas.",
-  "🔥 Motivação voltando... mentira, foi só um espasmo na pálpebra.",
-  "☕ Segunda rodada de café e a azia liderando o campeonato estomacal.",
-  "📅 Calendário avisando que faltam 4 dias inteiros de humilhação.",
-  "💻 Home office virou isolamento social com direito a falar sozinho.",
-  "😴 Sono controlado pelo medo de passar fome se for demitido hoje.",
-  "📈 Produtividade subindo porque o pavor do cartão recusado é o melhor motor.",
-  "⚡ Terça é melhor que segunda apenas porque o choque inicial passou.",
-  "🔥 O foco está na aba oculta do navegador buscando vagas em outro país.",
-  "☕ Café fervendo, igualzinho aos seus problemas pessoais não resolvidos.",
-  "📅 Dia mais leve porque você aceitou que nada dará certo esta semana.",
-  "💻 Teclado cantando e a sua mente gritando por socorro médico.",
-  "😴 Cama distante e realidade batendo com a força de um soco inglês.",
-  "📈 Pressão arterial subindo, tudo subindo menos o seu salário.",
-  "⚡ Energia alta por puro efeito do doce comido por pura ansiedade.",
-  "🔥 Terça: avanço na escala de destruição da sua juventude.",
-  "☕ Café no sangue e arrependimento de não ter estudado para concurso.",
-  "📅 Dia de trabalho duro para enriquecer o dono da empresa em Miami.",
-  "💻 Monitor ligado irradiando luz azul nas suas córneas cansadas.",
-  "😴 Cansaço dando trégua; cérebro entrou em dormência anestésica.",
-  "📈 Produtividade no azul e o seu humor no mais profundo preto.",
-  "⚡ Motivação alta para descobrir quem roubou sua marmita na geladeira.",
-  "🔥 Terça é a nova segunda? Não, é só a continuação do terror de ontem.",
-  "☕ Café no copinho plástico que vai poluir o planeta igual a você.",
-  "📅 Dia na metade e a sua energia vital abaixo da linha do equador.",
-  "💻 Trabalho rendendo o mínimo para não ser demitido por justa causa.",
-  "😴 Sono controlado com aquela xícara de café que já está fria.",
-  "📈 Ânimo subindo um milímetro antes de despencar no abismo da firma.",
-  "⚡ Energia alta para aguentar reunião que poderia ter sido um e-mail.",
-  "🔥 Dia de ação... judicial contra a empresa se continuarem com isso.",
-  "☕ Café no ponto certo para te dar taquicardia no meio da tarde.",
-  "📅 Vitória para quem conseguiu levantar da cama sem chorar no tapete.",
-];
-
-const quartaMessages = [
-  "🌓 Quarta: metade do caminho para o inferno semanal ser pausado.",
-  "🚀 Fim de semana no horizonte e o pavor de saber que está sem dinheiro.",
-  "⏳ Já passou da metade; aguente firme antes que seu fígado desista.",
-  "☕ Café de quarta vem com leve aroma de desespero de classe média.",
-  "📅 Meio da semana alcançado por quem ainda se importa com o tempo.",
-  "💻 Cérebro operando no modo automático de sobrevivência urbana.",
-  "😴 Não é sexta, mas o cheiro de cerveja barata já surge nas alucinações.",
-  "🌓 Semana no meio e sanidade mental dividida em várias partes.",
-  "🚀 Motivação alta para acabar logo isso e ir pro happy hour amanhã.",
-  "⏳ O tempo passando mais rápido do que a velocidade do seu salário sumindo.",
-  "☕ Café no ponto de causar tremedeira nas mãos ao digitar relatórios.",
-  "📅 Falta pouco para você poder fingir que tem alguma vida social.",
-  "💻 Home office de pijama e câmera desligada para esconder o desgosto.",
-  "😴 Cansaço virou rotina; seu corpo se acostumou com o abuso diário.",
-  "🌓 Quarta é esperança para os fracos e mais trabalho para os otários.",
-  "🚀 Fim de semana perto e a fatura do cartão chegando na mesma velocidade.",
-  "⏳ Contagem regressiva para se alienar com futebol e subcelebridades.",
-  "☕ Café na xícara para esquentar esse peito vazio de sentimentos bons.",
-  "📅 Dia na metade e paciência reduzida a pó de café reaproveitado.",
-  "💻 Digitando ofensas veladas em tom corporativo passivo-agressivo.",
-  "😴 Sono controlado com base no puro medo do desemprego em massa.",
-  "🌓 Vitória para quem não mandou o chefe tomar no cu até agora.",
-  "🚀 Energia para aguentar o papo furado do colega coach ao lado.",
-  "⏳ Juventude escorrendo pelo ralo da pia do banheiro do escritório.",
-  "☕ Café no sangue e ódio no coração: a combinação do funcionário do mês.",
-  "📅 Dia de luta para lembrar por que escolheu essa profissão maldita.",
-  "💻 Trabalho fluindo igual água de esgoto: marrom, densa e tóxica.",
-  "😴 Não é quinta, mas o nível de paciência já é de sexta às 17h59.",
-  "🌓 A semana na metade e a sua conta bancária no final absoluto.",
-  "🚀 Motivação alta para planejar sua fuga definitiva da civilização.",
-  "⏳ O tempo passando e você no mesmo cargo de estagiário sênior desde 2018.",
-  "☕ Café no copo para lembrar que a vida é curta e o expediente longo.",
-  "📅 Sobreviveu a mais 48 horas de pura exploração do capital.",
-  "💻 Monitor fritando as suas últimas células cerebrais saudáveis.",
-  "😴 Cansaço dando trégua para a entrada da enxaqueca vespertina.",
-  "🌓 Avanço na escala de loucura institucionalizada da empresa.",
-  "🚀 Fim de semana no radar e total falta de planos no coração.",
-  "⏳ Contagem para poder dormir 12 horas seguidas por pura depressão.",
-  "☕ Café no ponto para te manter acordado em apresentações de slides.",
-  "📅 Esperança de que um meteoro caia direto no prédio da firma.",
-];
-
-const quintaMessages = [
-  "🍕 Quinta: o fígado já pode começar o aquecimento para amanhã.",
-  "🏁 Último esforço, ou seja, empurrar tudo com a barriga até segunda.",
-  "🎯 Reta final para quem passou a semana fingindo que trabalha duro.",
-  "☕ Amanhã ninguém faz nada produtivo; o café de hoje é celebração.",
-  "📅 Suas chances de herdar uma fortuna antes do fim do mês sumiram.",
-  "💻 Trabalho na reta final e paciência na linha de chegada do colapso.",
-  "😴 Sexta chegando para salvar a dignidade que o RH não conseguiu tirar.",
-  "🍕 Expectativa de beber até esquecer o próprio CPF amanhã à noite.",
-  "🏁 Esforço no fim e desleixo profissional em níveis históricos.",
-  "🎯 Meta batida na marra com dados maquiados que o diretor finge crer.",
-  "☕ Energia necessária para aguentar o happy hour forçado da gerência.",
-  "📅 Falta pouco para desligar o celular corporativo e sumir no mapa.",
-  "💻 Bater ponto e passar o dia assistindo série na TV do quarto.",
-  "😴 Cansaço sumiu porque a adrenalina do fim de semana bateu forte.",
-  "🍕 Quinta da pizza e de engordar dois quilos por ansiedade existencial.",
-  "🏁 Vontade de ir embora operando desde às 9 horas da manhã.",
-  "🎯 Focar na quinta-feira já é exigir demais do trabalhador exausto.",
-  "☕ Café para manter os olhos abertos enquanto o chefe fala abobrinha.",
-  "📅 Mais uma semana da sua única vida trancada numa sala de drywall.",
-  "💻 Fechando as abas ocultas antes que passem atrás da sua cadeira.",
-  "😴 Dia de dormir cedo para aguentar o rojão alcoólico de amanhã.",
-  "🍕 Sobreviveu a mais uma semana de assédio moral velado.",
-  "🏁 Semana no final e a sua conta bancária pedindo um Pix pelo amor de Deus.",
-  "🎯 A sexta no horizonte brilhando como farol de ilusão da CLT.",
-  "☕ Café no sangue para aguentar a última reclamação do cliente chato.",
-  "📅 Esperando que a sexta passe rápido e sem demandas às 17h45.",
-  "💻 Trabalho fluindo com a leveza de um bloco de concreto no dedão.",
-  "😴 Cérebro já encerrou as atividades produtivas por hoje.",
-  "🍕 Pizza fria comida de madrugada chorando por solidão amorosa.",
-  "🏁 Esforço zero porque você sabe que o bônus vai pro herdeiro.",
-  "🎯 Prêmio por bater a meta: mais trabalho acumulado semana que vem.",
-  "☕ Falsa sensação de que você tem algum controle sobre sua vida.",
-  "📅 Gastou mais 24 horas vendendo sua juventude por migalhas de real.",
-  "💻 Monitor refletindo a imagem de quem precisa de internação urgente.",
-  "😴 Cansaço dando lugar à ansiedade social do fim de semana.",
-  "🍕 Pizza barata comprada com cupom de desconto já expirado.",
-  "🏁 Desespero de saber que sua vida pessoal é tão monótona quanto a firma.",
-  "🎯 Focar no presente é doloroso demais para a sua realidade atual.",
-  "☕ Café quente para queimar a língua e dar motivo real para chorar.",
-  "📅 Torcendo para o mundo acabar antes da reunião de resultados de amanhã.",
-];
-
-const sextaMessages = [
-  "🎉 Sexta-feira: o dia de quem odeia o trabalho e não tem vida pessoal.",
-  "🥳 Faltam só 8 horas de tortura psicológica antes de ser livre.",
-  "🍻 Felicidade chegando em forma de álcool barato e ressaca moral amanhã.",
-  "☕ O café de hoje serve apenas para curar a ressaca de ontem à noite.",
-  "📅 O dia acabando e o chefe preparando demanda urgente para as 17h45.",
-  "💻 Mente navegando em águas de total irresponsabilidade civil.",
-  "😴 Sexta chegou, pena que você vai dormir às 21h por exaustão física.",
-  "🎉 Festa para os solteiros e lavar roupa acumulada para você.",
-  "🥳 Fim de semana na porta e o cobrador do banco na outra.",
-  "🍻 Cerveja gelando para anestesiar a dor de saber que segunda tudo volta.",
-  "☕ Pico de energia que vai acabar exatamente na hora de chegar em casa.",
-  "📅 Sobreviveu a mais uma semana de humilhação remunerada pela CLT.",
-  "💻 Mexendo o mouse de 5 em 5 minutos para o Teams não ficar ausente.",
-  "😴 O corpo sabe que a paralisia do sofá está próxima de acontecer.",
-  "🎉 Alegria de quem não tem metas além de chegar vivo no sábado.",
-  "🥳 Festa na mente, miojo com Netflix na realidade da sua cama.",
-  "🍻 Churrasco com carne parcelada para caber no orçamento do mês.",
-  "☕ Disfarçando o bafo de cerveja que tomou no almoço executivo.",
-  "📅 Sua juventude se despedindo de você pelo retrovisor do ônibus lotado.",
-  "💻 Fingindo que digita o relatório final que ninguém vai abrir.",
-  "😴 Recusando-se a dormir cedo para não perder as horas de liberdade.",
-  "🎉 Alegria artificial gerada pelo fim temporário da exploração laboral.",
-  "🥳 O tempo passa três vezes mais rápido quando você não está sofrendo.",
-  "🍻 Cerveja na mão e um vazio existencial profundo no peito.",
-  "☕ Liberando o ódio acumulado na primeira discussão de trânsito.",
-  "📅 Dia de festa para quem tem dinheiro; para você é só mudar o local do cansaço.",
-  "💻 Trabalho fluindo na dinâmica de um trem descarrilado pegando fogo.",
-  "😴 O fígado trabalhando em regime de plantão médico de emergência.",
-  "🎉 Felicidade temporária vendida pelo sistema para você não queimar o escritório.",
-  "🥳 Gastando o dinheiro do aluguel em combo de vodka com energético.",
-  "🍻 Cerveja chamando e o banco notificando saldo insuficiente.",
-  "☕ Misturando café com as lágrimas de quem sabe que o descanso voa.",
-  "📅 Desperdiçou mais uma semana da sua única existência na Terra.",
-  "💻 Passou o dia inteiro olhando fotos das férias dos outros no Instagram.",
-  "😴 Cansaço dando trégua para a entrada da ressaca moral de amanhã.",
-  "🎉 Conseguiu não ser demitido por postar indireta para a gerência.",
-  "🥳 Fim de semana na porta e a depressão de domingo espiando pela fresta.",
-  "🍻 Cerveja gelando na geladeira vazia porque o salário acabou dia 5.",
-  "☕ Mantendo-se acordado até a hora de começar a beber socialmente.",
-  "📅 Esperança de que o sábado dure o dobro do tempo normal de rotação.",
-];
-
-const sabadoMessages = [
-  "🎈 Sábado: gastando o dinheiro que devia usar para pagar o condomínio.",
-  "🛌 Dia de curtir o descanso de quem fingiu demência na firma a semana toda.",
-  "☕ Aproveite: a sombra da segunda-feira cresce a partir das 18h.",
-  "🏖️ Lazer para quem tem carro; para você é faxina pesada na casa.",
-  "🍻 Cerveja gelada para esquecer que sua vida social é um deserto.",
-  "📅 Passando a folga pensando nas tarefas acumuladas que não vai fazer.",
-  "😴 Falta energia até para escovar os dentes na parte da tarde.",
-  "🎈 Diversão forçada nos stories para provar ao ex que você está ótimo.",
-  "🛌 Passando o dia deitado olhando pro teto e pensando na morte.",
-  "☕ Café para acompanhar o arrependimento das mensagens enviadas ontem.",
-  "🏖️ Praia chamando para queimar o ombro e perder o chinelo na areia.",
-  "🍻 Churrasco com carvão do ano passado e carne de origem duvidosa.",
-  "📅 Metade do fim de semana foi desperdiçada dormindo até o meio-dia.",
-  "😴 Cansaço deu lugar àquela ansiedade estranha de quem não tem o que fazer.",
-  "🎈 Festa na casa de amigos que você só suporta quando está bêbado.",
-  "🛋️ Sofá pronto para o seu corpo flácido acumular gordura trans assistindo TV.",
-  "☕ Acordando o cérebro a tempo de aproveitar as últimas horas de sol.",
-  "🏖️ O sol brilhando lá fora lembra o quanto você está pálido no quarto.",
-  "🍻 Cerveja na mão de quem claramente já deveria estar bebendo água.",
-  "📅 Sensação incômoda de que não fez nada de útil com as horas de folga.",
-  "😴 Mente continua processando as planilhas pendentes da gerência.",
-  "🎈 Alegria artificial comprada em 12 parcelas no cartão da mãe.",
-  "🛌 Interagir com seres humanos exige uma energia que você não possui.",
-  "☕ Curando a ressaca moral de ter gastado 200 reais ontem à noite.",
-  "🏖️ Lazer é para quem tem dinheiro para quiosque superfaturado.",
-  "🍻 Cerveja no copo, pagode no vizinho, dor de cabeça no lobo frontal.",
-  "📅 Folga para quem trabalha; para quem está desempregado é pânico puro.",
-  "😴 Se dormir agora, vai acordar no meio da noite sem ter o que fazer.",
-  "🎈 Lindo dia para comprar amaciante concentrado em promoção no mercado.",
-  "🛋️ Deitando no sofá para fingir que seus problemas financeiros sumiram.",
-];
-
-const domingoMessages = [
-  "☀️ Domingo: dia de recarregar e chorar ouvindo a música do Fantástico.",
-  "🛋️ A sombra da segunda-feira já está estuprando sua paz de espírito.",
-  "🌅 Amanhã a humilhação pelo pão de cada dia recomeça com força total.",
-  "📅 Reflexão profunda sobre onde você errou nas escolhas de carreira.",
-  "😴 Descanso para tentar esquecer que acorda às 5h30 amanhã de manhã.",
-  "☕ Café forte para cortar a depressão domingueira das 16h.",
-  "☀️ Sol brilhando só para esfregar que você passará o dia trancado.",
-  "🛋️ Passando o dia de pijama com cheiro de mofo e derrota acumulada.",
-  "🌅 Paz armada entre você e a vontade de sumir do mapa geográfico.",
-  "📅 Últimas horas de liberdade vigiada antes do retorno ao regime fechado.",
-  "😴 Pânico pré-segunda que acelera os seus batimentos cardíacos.",
-  "☕ Gosto amargo da realidade se aproximando a passos largos.",
-  "☀️ O dia no fim e o desespero tomando conta de cada célula sua.",
-  "🛋️ Indo dormir cedo para encurtar o pouco tempo livre que resta.",
-  "🌅 Descanso forçado de quem não tem dinheiro para sair de casa.",
-  "📅 Rezando por uma pane geral no sistema da empresa amanhã cedo.",
-  "😴 Sono regulado porque o relógio de ponto da firma exige pontualidade.",
-  "☕ Lendo notícias que provam que o mundo está piorando exponencialmente.",
-  "☀️ Segunda chegando igual caminhão sem freio na descida da sua vida.",
-  "🛋️ Olhando a vida dos outros dar certo enquanto a sua continua parada.",
-  "🌅 Paz de espírito de quem já aceitou o próprio destino medíocre.",
-  "📅 Fim da trégua de 48 horas que o sistema te dá para não pirar.",
-  "😴 Ansiedade com os problemas de amanhã não te deixa relaxar em paz.",
-  "☕ Engolindo o café junto com o choro na hora que começar o Fantástico.",
-  "☀️ O sol se pondo e levando a última gota de otimismo do bolso.",
-  "🛋️ Deitar e encarar o teto calculando o tamanho das suas dívidas.",
-  "🌅 Pensando em como o fim de semana dura 5 minutos e a semana 3 séculos.",
-  "📅 Recomeço da contagem dos dias que faltam para a próxima folga.",
-  "😴 Vida em frangalhos, saldo no vermelho, padrão mantido com sucesso.",
-  "☕ Criando energia para arrumar a mochila do trabalho de amanhã.",
-  "☀️ Semana nova provando que o que está ruim pode piorar muito mais.",
-  "🛋️ Sofá com saudade do seu corpo inerte que passou o dia vegetando.",
-  "🌅 Tortura psicológica medieval para a mente do trabalhador CLT.",
-  "📅 O tempo passa e você continua recebendo o mesmo salário de 2021.",
-  "😴 O desânimo existencial continua firme no mesmo lugar de sempre.",
-  "☕ Tomando café para aguentar o tédio das reuniões de amanhã.",
-  "☀️ Escuridão da segunda-feira cobrindo a sua alma imaculada.",
-  "🛋️ Cama com promessa de pesadelos com o chefe te cobrando planilhas.",
-  "🌅 Esperança de que o despertador quebre de forma definitiva amanhã.",
-  "📅 Para os mortos é paz, para os vivos da CLT é o corredor da morte.",
-];
+let lastMessageIndex = -1;
 
 // =====================================================================
 // 2. CÁLCULO DE FERIADOS MÓVEIS (com cache por ano)
@@ -818,39 +130,8 @@ function isProlongedHoliday(holidayDate) {
 // 3. SELEÇÃO DE MENSAGENS (com rotação e não repetição)
 // =====================================================================
 
-const messageMap = {
-  "Natal": natalMessages,
-  "Ano Novo": anoNovoMessages,
-  "Carnaval": carnavalMessages,
-  "Páscoa": pascoaMessages,
-  "Sexta-feira Santa": sextaSantaMessages,
-  "Corpus Christi": corpusChristiMessages,
-  "Dia do Trabalho": trabalhoMessages,
-  "Independência do Brasil": independenciaMessages,
-  "Consciência Negra": conscienciaMessages,
-  "São Jorge (RJ)": saoJorgeMessages,
-  "São Sebastião (RJ)": saoSebastiaoMessages,
-  "Tiradentes": tiradentesMessages,
-  "Nossa Senhora Aparecida": aparecidaMessages,
-  "Finados": finadosMessages,
-  "Véspera de Natal": vesperaNatalMessages,
-  "Véspera de Ano Novo": vesperaAnoNovoMessages,
-};
-
-const dayMessageMap = {
-  0: domingoMessages,
-  1: segundaMessages,
-  2: tercaMessages,
-  3: quartaMessages,
-  4: quintaMessages,
-  5: sextaMessages,
-  6: sabadoMessages,
-};
-
-const feriadaoMessagesList = feriadaoMessages;
-
-let lastMessageIndex = -1;
-let lastMessageCategory = '';
+// As variáveis messageMap, dayMessageMap e feriadaoMessagesList são
+// definidas no arquivo messages.js, carregado antes deste script.
 
 function getRandomMessageFromList(list) {
   if (!list || list.length === 0) return "☕ Aguente firme...";
@@ -884,8 +165,9 @@ function getMessageForDayOfWeek(dayOfWeek) {
 
 function getUpcomingHolidayMessage() {
   const now = new Date();
-  const currentYear = now.getFullYear();
-  for (let i = 1; i <= 7; i++) {
+  const daysUntilSunday = (7 - now.getDay()) % 7;
+
+  for (let i = 1; i <= daysUntilSunday; i++) {
     const future = new Date(now);
     future.setDate(now.getDate() + i);
     if (!isWeekday(future)) continue;
@@ -894,7 +176,8 @@ function getUpcomingHolidayMessage() {
     if (holiday) {
       const daysLeft = i;
       const name = holiday.name;
-      let msg = `📢 Atenção! Em ${daysLeft} dia${daysLeft>1?'s':''} teremos ${name}!`;
+      let msg = `📢 Atenção! Em ${daysLeft} dia${daysLeft > 1 ? 's' : ''} teremos ${name}!`;
+
       if (isProlongedHoliday(future)) {
         const feriadaoMsg = getRandomMessageFromList(feriadaoMessagesList);
         msg = `🔥 ${feriadaoMsg}`;
@@ -919,16 +202,16 @@ function getDailyMessage() {
 }
 
 // =====================================================================
-// 5. CONTAGEM REGRESSIVA PARA SEXTA
+// 5. CONTAGEM REGRESSIVA PARA SEXTA (horário ajustado para 17h)
 // =====================================================================
 
 function getNextFriday() {
   const now = new Date();
   const friday = new Date();
   let daysUntilFriday = (5 - now.getDay() + 7) % 7;
-  if (daysUntilFriday === 0 && now.getHours() >= 15) daysUntilFriday = 7;
+  if (daysUntilFriday === 0 && now.getHours() >= 17) daysUntilFriday = 7;
   friday.setDate(now.getDate() + daysUntilFriday);
-  friday.setHours(15, 0, 0, 0);
+  friday.setHours(17, 0, 0, 0);
   return friday;
 }
 
@@ -964,8 +247,45 @@ function megaCelebration() {
 }
 
 // =====================================================================
-// 7. ATUALIZAÇÃO DA INTERFACE
+// 7. ATUALIZAÇÃO DA INTERFACE (incluindo título e subtítulo)
 // =====================================================================
+
+function updateTitleAndSubtitle() {
+  const titleEl = document.getElementById('title');
+  const subtitleEl = document.getElementById('subtitle');
+  const now = new Date();
+
+  const holidayToday = getHolidayInfo(now);
+  if (holidayToday) {
+    titleEl.textContent = `⏳ ${holidayToday.name} está aqui! 🎉`;
+    subtitleEl.textContent = `Aproveite o descanso!`;
+    return;
+  }
+
+  const daysUntilSunday = (7 - now.getDay()) % 7;
+  let holidayName = null;
+  let daysLeft = 0;
+
+  for (let i = 1; i <= daysUntilSunday; i++) {
+    const future = new Date(now);
+    future.setDate(now.getDate() + i);
+    if (!isWeekday(future)) continue;
+    const holiday = getHolidayInfo(future);
+    if (holiday) {
+      holidayName = holiday.name;
+      daysLeft = i;
+      break;
+    }
+  }
+
+  if (holidayName) {
+    titleEl.textContent = `⏳ ${holidayName} está chegando!`;
+    subtitleEl.textContent = `Faltam ${daysLeft} dia${daysLeft > 1 ? 's' : ''} para o feriado!`;
+  } else {
+    titleEl.textContent = `⏳ Sexta-feira está chegando!`;
+    subtitleEl.textContent = `A sobrevivência semanal continua...`;
+  }
+}
 
 function updateCountdown() {
   const now = new Date();
@@ -977,7 +297,7 @@ function updateCountdown() {
   const subtitle = document.getElementById('subtitle');
   const footer = document.getElementById('footer');
 
-  if (now.getDay() === 5 && now.getHours() >= 15) {
+  if (now.getDay() === 5 && now.getHours() >= 17) {
     countdown.style.display = 'none';
     normalMessage.style.display = 'none';
     title.style.display = 'none';
@@ -1009,15 +329,18 @@ function updateCountdown() {
 
 function updateMessage() {
   const msgEl = document.getElementById('message');
+
   const upcomingMsg = getUpcomingHolidayMessage();
   if (upcomingMsg) {
     msgEl.innerHTML = upcomingMsg;
     msgEl.classList.add('highlight');
-    return;
+  } else {
+    const dailyMsg = getDailyMessage();
+    msgEl.innerHTML = dailyMsg;
+    msgEl.classList.remove('highlight');
   }
-  const dailyMsg = getDailyMessage();
-  msgEl.innerHTML = dailyMsg;
-  msgEl.classList.remove('highlight');
+
+  updateTitleAndSubtitle();
 }
 
 // =====================================================================
@@ -1025,9 +348,9 @@ function updateMessage() {
 // =====================================================================
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
-
 updateMessage();
+
+setInterval(updateCountdown, 1000);
 setInterval(updateMessage, 4000);
 
 startNormalConfetti();

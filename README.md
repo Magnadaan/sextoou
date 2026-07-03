@@ -10,7 +10,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este é um projeto web interativo que exibe uma contagem regressiva para **sexta-feira às 15h** (o horário oficial do "Sextou" para muitos trabalhadores brasileiros). 
+Este é um projeto web interativo que exibe uma contagem regressiva para **sexta-feira às 17h** (o horário oficial do "Sextou" para muitos trabalhadores brasileiros). 
 
 A página utiliza um banco de mensagens humorísticas e ácidas que mudam de acordo com o dia da semana, feriados nacionais, estaduais e municipais (com foco no Rio de Janeiro), além de detectar "feriadões" prolongados.
 

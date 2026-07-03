@@ -14,7 +14,7 @@ Este é um projeto web interativo que exibe uma contagem regressiva para **sexta
 
 A página utiliza um banco de mensagens humorísticas e ácidas que mudam de acordo com o dia da semana, feriados nacionais, estaduais e municipais (com foco no Rio de Janeiro), além de detectar "feriadões" prolongados.
 
-Quando finalmente chega a sexta-feira após as 15h, a página entra em modo **celebração total** com animações, texto pulsante e uma chuva de confetes para comemorar o fim do expediente.
+Quando finalmente chega a sexta-feira após as 17h, a página entra em modo **celebração total** com animações, texto pulsante e uma chuva de confetes para comemorar o fim do expediente.
 
 ---
 
@@ -24,7 +24,7 @@ Quando finalmente chega a sexta-feira após as 15h, a página entra em modo **ce
   Dias, horas, minutos e segundos atualizados a cada segundo até o momento exato da libertação.
 
 - **🎉 Modo "SEXTOU"**  
-  Após as 15h da sexta-feira, a interface se transforma completamente com animações vibrantes, texto neon e uma mega explosão de confetes (400+ partículas).
+  Após as 17h da sexta-feira, a interface se transforma completamente com animações vibrantes, texto neon e uma mega explosão de confetes (400+ partículas).
 
 - **📅 Mensagens Inteligentes por Dia da Semana**  
   Cada dia (Segunda a Domingo) possui um banco de +30 mensagens sarcásticas e divertidas que são exibidas aleatoriamente.
